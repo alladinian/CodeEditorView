@@ -392,7 +392,7 @@ extension CodeEditor {
 /// Environment key for the current code editor theme.
 ///
 public struct CodeEditorTheme: EnvironmentKey {
-  public static var defaultValue: Theme = Theme.defaultLight
+  public static var defaultValue: Theme = Theme.defaultDark
 }
 
 extension EnvironmentValues {
@@ -447,6 +447,7 @@ struct CodeEditor_Previews: PreviewProvider {
     CodeEditor(text: .constant("-- Hello World!"),
                position: .constant(CodeEditor.Position()),
                messages: .constant(Set()),
-               language: .haskell())
+               language: .haskell(),
+               layout: .init(showMinimap: false, wrapText: true))
   }
 }

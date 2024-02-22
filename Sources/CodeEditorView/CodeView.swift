@@ -321,6 +321,8 @@ final class CodeView: NSTextView {
                                 getMessageViews: { self.messageViews },
                                 isMinimapGutter: false)
     gutterView.autoresizingMask  = .none
+    gutterView.clipsToBounds     = true
+      
     self.gutterView              = gutterView
     codeLayoutManager.gutterView = gutterView
     // NB: The gutter view is floating. We cannot add it now, as we don't have an `enclosingScrollView` yet.
